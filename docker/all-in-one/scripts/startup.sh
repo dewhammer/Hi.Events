@@ -9,6 +9,7 @@ if ! php artisan migrate --force; then
     echo "============================================"
 fi
 
+# Clear all caches first
 php artisan cache:clear
 php artisan config:clear
 php artisan route:clear
@@ -27,6 +28,9 @@ chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
 # Create storage link (remove existing if present)
 rm -f /app/backend/public/storage
 php artisan storage:link
+
+# Force clear config cache again after storage link (ensures filesystem config is fresh)
+php artisan config:clear
 
 # Configure nginx to use Railway's PORT if set, otherwise use 80
 PORT=${PORT:-80}
