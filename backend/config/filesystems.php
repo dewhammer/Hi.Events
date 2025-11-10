@@ -17,7 +17,7 @@ return [
 
     'public' => env('FILESYSTEM_PUBLIC_DISK', 'public'),
 
-    'private' => env('FILESYSTEM_PRIVATE_DISK', 'public'),
+    'private' => env('FILESYSTEM_PRIVATE_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------
