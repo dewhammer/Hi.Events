@@ -18,4 +18,9 @@ php artisan storage:link
 chown -R www-data:www-data /app/backend
 chmod -R 775 /app/backend/storage /app/backend/bootstrap/cache
 
+# Configure nginx to use Railway's PORT if set, otherwise use 80
+PORT=${PORT:-80}
+sed -i "s/listen 80;/listen ${PORT};/g" /etc/nginx/nginx.conf
+sed -i "s/listen \[::\]:80;/listen [::]:${PORT};/g" /etc/nginx/nginx.conf
+
 exec /usr/bin/supervisord -c /etc/supervisord.conf
