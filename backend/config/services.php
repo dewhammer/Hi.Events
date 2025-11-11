@@ -52,4 +52,8 @@ return [
     'open_exchange_rates' => [
         'app_id' => env('OPEN_EXCHANGE_RATES_APP_ID'),
     ],
+
+    'resend' => [
+        'api_key' => env('RESEND_API_KEY'),
+    ],
 ];
