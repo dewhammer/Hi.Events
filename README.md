@@ -196,3 +196,4 @@ Have questions? Our [documentation](https://hi.events/docs?utm_source=gh-readme&
 Hi.Events is licensed under the [AGPL-3.0](https://github.com/HiEventsDev/hi.events/blob/main/LICENCE) license.
 
 For more licensing information, including commercial licencing options, please visit our licensing page [here](https://hi.events/licensing).
+
