@@ -197,3 +197,4 @@ Hi.Events is licensed under the [AGPL-3.0](https://github.com/HiEventsDev/hi.eve
 
 For more licensing information, including commercial licencing options, please visit our licensing page [here](https://hi.events/licensing).
 
+# Trigger Railway rebuild Tue Nov 11 12:57:06 EET 2025
