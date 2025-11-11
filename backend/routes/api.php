@@ -243,6 +243,16 @@ $router->middleware(['auth:api'])->group(
         $router->put('/accounts/{account_id}/taxes-and-fees/{tax_or_fee_id}', EditTaxOrFeeAction::class);
         $router->delete('/accounts/{account_id}/taxes-and-fees/{tax_or_fee_id}', DeleteTaxOrFeeAction::class);
 
+        // Debug route - remove after testing
+        $router->get('/debug/resend-key', function () {
+            return response()->json([
+                'RESEND_API_KEY_env' => env('RESEND_API_KEY') ? 'SET (' . substr(env('RESEND_API_KEY'), 0, 10) . '...)' : 'NULL',
+                'RESEND_API_KEY_getenv' => getenv('RESEND_API_KEY') ? 'SET (' . substr(getenv('RESEND_API_KEY'), 0, 10) . '...)' : 'NULL',
+                'MAIL_MAILER' => env('MAIL_MAILER'),
+                'config_resend' => config('services.resend.api_key') ? 'SET' : 'NULL',
+            ]);
+        });
+
         // Events
         $router->post('/events', CreateEventAction::class);
         $router->get('/events', GetEventsAction::class);
